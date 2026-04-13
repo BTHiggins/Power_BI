@@ -20,7 +20,7 @@
       color: var(--text);
       font-family: 'DM Sans', sans-serif;
       min-height: 100vh;
-      padding: 40px 24px;
+      padding: 32px 32px;
     }
     body::before {
       content: '';
@@ -33,7 +33,7 @@
       pointer-events: none;
       z-index: 0;
     }
-    .container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .container { width: 100%; position: relative; z-index: 1; }
     .back {
       display: inline-flex;
       align-items: center;
@@ -41,11 +41,11 @@
       font-size: 0.85rem;
       color: var(--muted);
       text-decoration: none;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       transition: color 0.2s;
     }
     .back:hover { color: var(--accent); }
-    header { margin-bottom: 32px; animation: fadeUp 0.5s ease both; }
+    header { margin-bottom: 24px; animation: fadeUp 0.5s ease both; }
     .eyebrow {
       font-size: 11px;
       font-weight: 500;
@@ -66,13 +66,17 @@
       border: 1px solid var(--border);
       border-top: 3px solid var(--accent);
       border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      justify-content: center;
+      padding: 16px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
       animation: fadeUp 0.5s ease 0.1s both;
     }
-    .report-wrap iframe { border-radius: 8px; max-width: 100%; }
+    .report-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 78vh;
+      border-radius: 8px;
+      border: none;
+    }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -87,7 +91,7 @@
       <h1>🎮 Steam Sales</h1>
     </header>
     <div class="report-wrap">
-      <iframe title="Power BI Example - Steam Data" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiNDgyNjhlMzEtYjI5My00OWQ0LTgwZjYtYWYzYzM3MzhmNTFjIiwidCI6ImNmOWMzZWFmLTgwNTAtNDU2Ny05ZjRiLWMzYmJjOGE5NDYyMCJ9" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe title="Power BI Example - Steam Data" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiNDgyNjhlMzEtYjI5My00OWQ0LTgwZjYtYWYzYzM3MzhmNTFjIiwidCI6ImNmOWMzZWFmLTgwNTAtNDU2Ny05ZjRiLWMzYmJjOGE5NDYyMCJ9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
   </div>
 </body>
