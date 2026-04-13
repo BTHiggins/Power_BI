@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LAX Flights – Power BI Report</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f5f6fa;
       --card: #ffffff;
       --border: #e2e4ed;
-      --accent: #2563eb;
+      --accent: #00A7CF;
       --text: #0f0f1a;
       --muted: #6b7280;
     }
@@ -27,13 +27,13 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(37,99,235,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37,99,235,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(0,167,207,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,167,207,0.05) 1px, transparent 1px);
       background-size: 40px 40px;
       pointer-events: none;
       z-index: 0;
     }
-    .container { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
     .back {
       display: inline-flex;
       align-items: center;
@@ -55,10 +55,11 @@
       margin-bottom: 10px;
     }
     h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: 800;
-      letter-spacing: -0.02em;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
     }
     .report-wrap {
       background: var(--card);
@@ -86,7 +87,7 @@
       <h1>✈️ LAX Flights</h1>
     </header>
     <div class="report-wrap">
-      <iframe title="Power BI Example - Flights" width="600" height="373.5" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiOWY2MjIxOGQtNjkyMS00MDhmLTljMGUtMDIyNTBkZjA1NDBmIiwidCI6ImNmOWMzZWFmLTgwNTAtNDU2Ny05ZjRiLWMzYmJjOGE5NDYyMCJ9" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe title="Power BI Example - Flights" width="1024" height="804" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiOWY2MjIxOGQtNjkyMS00MDhmLTljMGUtMDIyNTBkZjA1NDBmIiwidCI6ImNmOWMzZWFmLTgwNTAtNDU2Ny05ZjRiLWMzYmJjOGE5NDYyMCJ9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
   </div>
 </body>
