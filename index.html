@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI Dashboard Examples</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f6fa;
+      --card: #ffffff;
+      --border: #e2e4ed;
+      --accent1: #00A7CF;
+      --accent2: #034458;
+      --accent3: #1B2838;
+      --text: #0f0f1a;
+      --muted: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      padding: 60px 24px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,167,207,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,167,207,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      margin-bottom: 64px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; --card-accent: var(--accent1); }
+    .card:nth-child(2) { animation-delay: 0.2s; --card-accent: var(--accent2); }
+    .card:nth-child(3) { animation-delay: 0.3s; --card-accent: var(--accent3); }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-accent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-accent);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--card-accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--card-accent) 25%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .card-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .card-arrow {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--card-accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Power BI Dashboard Examples</h1>
+      <p class="subtitle">Select a report below.</p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="flights-index.html">
+        <div class="card-icon">✈️</div>
+        <div class="card-title">LAX Flights</div>
+        <div class="card-desc">Exploring flights arriving to and departing from LAX.</div>
+        <div class="card-arrow">View report →</div>
+      </a>
+
+      <a class="card" href="oxford-index.html">
+        <div class="card-icon">🚦</div>
+        <div class="card-title">Oxford Traffic Flow</div>
+        <div class="card-desc">Traffic volumes around Oxford.</div>
+        <div class="card-arrow">View report →</div>
+      </a>
+
+      <a class="card" href="steam-index.html">
+        <div class="card-icon">🎮</div>
+        <div class="card-title">Steam Sales</div>
+        <div class="card-desc">Sales trends, top titles, and revenue insights from the Steam platform.</div>
+        <div class="card-arrow">View report →</div>
+      </a>
+    </div>
+
+    <footer>Built with Power BI &amp; GitHub Pages</footer>
+  </div>
+</body>
+</html>

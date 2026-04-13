@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oxford Traffic Flow – Power BI Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f6fa;
+      --card: #ffffff;
+      --border: #e2e4ed;
+      --accent: #7c3aed;
+      --text: #0f0f1a;
+      --muted: #6b7280;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      padding: 40px 24px;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124,58,237,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back:hover { color: var(--accent); }
+    header { margin-bottom: 32px; animation: fadeUp 0.5s ease both; }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .report-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      animation: fadeUp 0.5s ease 0.1s both;
+    }
+    .report-wrap iframe { border-radius: 8px; max-width: 100%; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="index.html">← Back to Reports</a>
+    <header>
+      <p class="eyebrow">Power BI Report</p>
+      <h1>🚦 Oxford Traffic Flow</h1>
+    </header>
+    <div class="report-wrap">
+      <iframe title="Power BI Example - Oxford Road Traffic" width="600" height="373.5" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiM2MyZWI4Y2YtNzgzOC00NmFkLTlhMzgtMjc5ODVhODQxZmI5IiwidCI6ImNmOWMzZWFmLTgwNTAtNDU2Ny05ZjRiLWMzYmJjOGE5NDYyMCJ9" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+  </div>
+</body>
+</html>
